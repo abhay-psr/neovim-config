@@ -29,7 +29,13 @@ vim.cmd.set('shiftwidth=4')
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
     Plug('nvim-treesitter/nvim-treesitter', {['branch'] = 'master' })
-    Plug 'ellisonleao/gruvbox.nvim'
+
+    -- Gruvbox -> colortheme
+    -- Plug 'ellisonleao/gruvbox.nvim'
+
+    -- Tokyonight -> colortheme
+    -- doc: https://github.com/folke/tokyonight.nvim
+    Plug 'folke/tokyonight.nvim'
 vim.call('plug#end')
 -- }
 
@@ -78,4 +84,11 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+-- }
+
+
+-- {
+-- Set colortheme
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme tokyonight-night]])
 -- }
