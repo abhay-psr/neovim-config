@@ -36,6 +36,11 @@ vim.call('plug#begin')
     -- Tokyonight -> colortheme
     -- doc: https://github.com/folke/tokyonight.nvim
     Plug 'folke/tokyonight.nvim'
+
+    -- Nvim lspconfig
+    -- github: https://github.com/neovim/nvim-lspconfig
+    -- doc: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+    Plug 'neovim/nvim-lspconfig'
 vim.call('plug#end')
 -- }
 
@@ -84,6 +89,20 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+-- }
+
+
+-- {
+-- nvim-lspconfig config
+-- doc: https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#configuration
+-- doc: https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#configuration
+-- concept: set lsp config or omit to accept default config and then enable it
+-- 
+vim.lsp.config('clangd', {
+    cmd = {'clangd-14'}
+})
+vim.lsp.enable('clangd')
+
 -- }
 
 
